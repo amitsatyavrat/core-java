@@ -108,6 +108,10 @@ public class EmployeeStream {
 		//OR
 		Optional<Employee> emp4 = empList.stream().max(Comparator.comparingInt(Employee::getAge));
 		System.out.println("Name: "+emp4.get().getName()+" Age: "+emp4.get().getAge()+" Role: "+emp4.get().getRole());
+		
+		//all employee details working as a manager and salary>50000
+		List<Employee> employeesAsManager = empList.stream().filter(e -> e.getRole().equalsIgnoreCase("Manager") && e.getSalary()>50000).toList();
+		System.out.println("Employee as Manager : "+employeesAsManager);
 	}
 
 }
@@ -179,6 +183,11 @@ class Employee {
 	public void setSalary(double salary) {
 		this.salary = salary;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", age=" + age + ", gender=" + gender + ", role=" + role
+				+ ", yearOfStart=" + yearOfStart + ", salary=" + salary + "]";
+	}
 	
 }
