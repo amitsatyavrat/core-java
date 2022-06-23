@@ -16,6 +16,26 @@ import java.util.stream.Stream;
 public class TestJava8Streams {
 
 	public static void main(String[] args) {
+		//check palindrome
+		String inputString = "kayaka";
+        char[] ch2 = inputString.toCharArray();
+        String str = "";
+        for (int i = ch2.length-1; i>=0 ; i--) {
+            str = str + ch2[i];
+        }
+        if(inputString.equals(str))
+        System.out.println("Given string is a plindrome");
+        //other way to check palindrome
+        boolean flag = true;
+        for (int i=0, j=ch2.length-1;i< ch2.length-1 &&j> 0;i++,j--) {
+        	if(ch2[i] != ch2[j]) {
+        		flag=false;
+        		System.out.println("Not a palindrome");
+        		break;
+        	}
+        }
+        if(flag)
+        System.out.println("Palindrome");
 
 		//With stream
 		String input = "a,b,a,f,a,h,b,h,s,f,g,d,A,B";

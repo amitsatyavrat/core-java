@@ -9,7 +9,7 @@ public class ATMDispenser {
 		//input = 530
 		//output = 10*50 1*20 1*10
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Please enter you amount to be withdrawn: ");
+		System.out.println("Please enter your amount to be withdrawn: ");
 		int amount = sc.nextInt();
 		System.out.println(amount);
 		boolean isDenominationOf50 = true, isDenominationOf20 = true, isDenominationOf10 = true;
