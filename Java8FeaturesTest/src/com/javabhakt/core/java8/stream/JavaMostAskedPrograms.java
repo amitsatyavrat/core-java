@@ -11,6 +11,7 @@ public class JavaMostAskedPrograms {
 		String str3 = "Amit";
 		System.out.println(str1==str2);
 		System.out.println(str1.equals(str2));
+		
 		//to check anagram (all characters should be same in both the strings)
 		String input = "LISTEN";
 		String input2 = "SILENT";

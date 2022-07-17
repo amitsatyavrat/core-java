@@ -5,17 +5,25 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 import java.util.Spliterator;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
+import com.javabhakt.core.java8.basics.marker.Entity;
+
 public class TestJava8Streams {
 
 	public static void main(String[] args) {
+		//String input = "A@B#CD$E";
+		//output = "E@D#CB$A"
+		
 		//check palindrome
 		String inputString = "kayaka";
         char[] ch2 = inputString.toCharArray();
@@ -25,6 +33,7 @@ public class TestJava8Streams {
         }
         if(inputString.equals(str))
         System.out.println("Given string is a plindrome");
+        
         //other way to check palindrome
         boolean flag = true;
         for (int i=0, j=ch2.length-1;i< ch2.length-1 &&j> 0;i++,j--) {
@@ -55,6 +64,10 @@ public class TestJava8Streams {
 			}
 		}
 		System.out.println(map);
+		//print key and value
+		for (Entry<Character, Integer> entry : map.entrySet())
+			System.out.println("Key = " + entry.getKey() + ", Value = " + entry.getValue());
+		
 		//sort {1,5,@,4,3,%,2,a,8,Z,}
 		List<String> strList = Arrays.asList("1","5","@","3","4","7","@","z");
 		Collections.sort(strList);
